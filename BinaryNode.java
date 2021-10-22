@@ -1,6 +1,6 @@
 class BinaryNode<T>
 {
-   private T             data;
+   private T data;
    private BinaryNode<T> leftChild;  // Reference to left child
    private BinaryNode<T> rightChild; // Reference to right child
 
@@ -43,7 +43,7 @@ class BinaryNode<T>
       return leftChild;
    } // end getLeftChild
 
-   /** Sets this node’s left child to a given node.
+   /** Sets this nodeâ€™s left child to a given node.
        @param newLeftChild  A node that will be the left child. */
    public void setLeftChild(BinaryNode<T> newLeftChild)
    {
@@ -64,7 +64,7 @@ class BinaryNode<T>
       return rightChild;
    } // end getRightChild
    
-   /** Sets this node’s right child to a given node.
+   /** Sets this nodeâ€™s right child to a given node.
     @param newRightChild  A node that will be the right child. */
    public void setRightChild(BinaryNode<T> newRightChild)
    {
