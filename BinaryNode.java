@@ -115,30 +115,32 @@ class BinaryNode<T>
    @return  The height of the subtree rooted at "this" node. */
    public int getHeight_binaryNodeMethod()
    {  
-      int leftNum = 0;
-      int rightNum = 0;
+      int totalHeight = 0;
+      int leftHeight = 0;
+      int rightHeight = 0;
 
-      if (node.getLeftChild() != null)
-         leftNum = getNumberOfNodes(node.getLeftChild());
-      if (node.getRightChild() != null)
-         rightNum = getNumberOfNodes(node.getRightChild());
+      if (leftChild != null)
+         leftHeight = leftChild.getHeight_binaryNodeMethod();
+      if (rightChild != null)
+         rightHeight = rightChild.getHeight_binaryNodeMethod();
+      totalHeight = 1 + Math.max(leftHeight, rightHeight);
    
-      return 1 + leftNum + rightNum;
+      return totalHeight; 
    } // end getHeight
    
    /** -------------------------------------------------------------------- */
    /** A Recursive Method in the BinaryNode Class  
     * Counts the nodes in the subtree rooted at "this" node.
    @return  The number of nodes in the subtree rooted at "this" node. */
-	public int getNumberOfNodes_binaryNodeMethod()
-	{
-	  int leftNumber = 0;
-	  int rightNumber = 0;
-	  if (leftChild != null)
-	     leftNumber = leftChild.getNumberOfNodes_binaryNodeMethod();
-	  if (rightChild != null)
-	     rightNumber = rightChild.getNumberOfNodes_binaryNodeMethod();
-	  return 1 + leftNumber + rightNumber;
-	} // end getNumberOfNodes
+   public int getNumberOfNodes_binaryNodeMethod()
+   {
+      int leftNumber = 0;
+      int rightNumber = 0;
+      if (leftChild != null)
+         leftNumber = leftChild.getNumberOfNodes_binaryNodeMethod();
+      if (rightChild != null)
+	 rightNumber = rightChild.getNumberOfNodes_binaryNodeMethod();
+      return 1 + leftNumber + rightNumber;
+   } // end getNumberOfNodes
 	
 } // end BinaryNode
